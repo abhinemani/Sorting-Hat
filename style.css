@@ -1,0 +1,892 @@
+/*  
+Theme Name: Audacity of Tanish
+Theme URI: http://ahren.org/code/tanish-wp
+Description: Dark configurable theme with JavaScript effects ;-), bottom bars, costumisable background image, dynamic content show/hide capabilities. Needs WP >= 2.7 for full functionality. SCREENSHOT DOESN'T DO JUSTICE ;-), CHECK THE DEMO/PREVIEW and the Dashboard/Admin options! New in this release: option to display latest post expanded in front page, background tile, other styling, extensive fixes, more complete IE (7,8) support, and a lot more. See <a href='http://ahren.org/code/bit/tanish-wp-1dot0'>http://ahren.org/code/bit/tanish-wp-1dot0</a> for full list of changes and <a href='http://ahren.org/code/tanish-wp'>http://ahren.org/code/tanish-wp</a> for features and screenshots.
+Version: 1.0.1
+Author: Ravi Sarma
+Author URI: http://ahren.org/code/
+Tags: two-columns, flexible-width, theme-options, threaded-comments, black, dark
+
+	 Audacity of Tanish 1.0.1
+	 http://ahren.org/code/tanish-wp
+
+	The CSS, XHTML and design are released under the
+    latest GPL (at time of use):
+	http://www.opensource.org/licenses/gpl-license.php
+*/
+
+HTML,
+BODY
+{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    border-style: none;
+    background: url(http://sortinghat.codeforamerica.org/wp-content/uploads/2011/04/bg.png);
+    color: #000000;
+    font-size: 12pt;
+    line-height: 18pt;
+    font-family: 'Cabin', Georgia, "Lucida Grande", sans-serif;
+}
+
+a:link {    color: #cc3333; text-decoration: none;}      /* unvisited link */
+a:visited {color:#cc3333;}  /* visited link */
+a:hover {text-decoration: underline;}  /* mouse over link */
+a:active {text-decoration: underline;}  /* selected link */
+
+IMG
+{
+    border: none 0px;
+}
+
+ li.categories ul {list-style-type: none; margin: 0; padding 0; -webkit-padding-start: 0px; display: inline;}
+ li.categories ul li {float: left; display: inline; margin-right: 3px; }
+
+
+BLOCKQUOTE
+{
+    border-left: 2px solid #ccc;
+    padding: 5px 0px 5px 15px;
+    margin: 0px;
+    margin-left: 15px;
+}
+
+ol {padding: 0; list-style-position: inside; }
+
+.comparison_table th, .comparison_table tr, .comparison_table td  {border: none;}
+
+.comment BLOCKQUOTE
+{
+    overflow: auto;
+}
+
+TABLE
+{
+    border-style: none;
+    font-family: inherit;
+}
+
+TH
+{
+    border: 1px solid #bb2200;
+    padding: 2px 4px;
+    border-style: solid solid solid none;
+}
+
+TD
+{
+    border: 1px solid #444444;
+    padding: 2px 4px;
+    border-style: none dotted solid none;
+}
+
+PRE,
+CODE
+{
+    color: #ffeeaa;
+	font-family: monospace;
+}
+
+.heading,
+H1,
+H2,
+H3,
+H4,
+H5,
+H6
+{
+    color: #555;
+}
+
+h3 {
+    font-family: Oswald, Cabin, serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: -.05em;
+    font-size: 1.2em;
+    text-shadow: #ccc 1px 1px;
+
+}
+
+.heading
+{
+    font-family: Oswald, Georgia, serif;
+    font-size: 24pt;
+    text-shadow: #ccc 1px 1px;
+    text-transform: uppercase;
+    letter-spacing: -.05em;
+}
+
+
+#comments > .heading,
+#respond > .heading
+{
+    font-size: 20pt;
+}
+
+#container
+{
+    padding: 0px 10px 30px 10px;
+    width: 998px;
+    position: relative; 
+    margin: 0 auto;
+}
+
+#header
+{
+    padding-top: 0px;
+    width: 998px;
+    text-align: center;
+    position: relative; 
+}
+
+#title
+{
+    text-align: center;
+    align: center;
+    font-size:  24pt;
+ 
+}
+
+#title a
+{
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+#title img {border-bottom: 3px solid #CCC;
+
+}
+
+#description
+{
+    font-size: 12pt;
+    padding: 3px 6px;
+    margin-top: 8px;
+    text-align: center;
+    align: center;
+    color: #999999;
+    font-family: georgia;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+#rsslink
+{
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+
+	.feedback-panel {
+	       padding:20px;
+	       width: 250px;
+	       background: #fff;
+	       border: #ccc 5px solid;
+	       position:absolute;
+	       top:200px;
+	       left:-299px;
+	   }
+	   
+	   .feedback-panel a.feedback-tab {
+           background:transparent url(http://codeforamerica.org/wp-content/uploads/2011/08/leaderboard.jpg) no-repeat scroll 0 0;
+           border: #ccc solid 5px;
+           display:block;
+           height:112px;
+
+        text-indent:-9999px;
+        left: 60px;
+	bottom: 25px;
+	position: relative;
+	float: right;
+	width: 35px;
+	outline: none;
+	padding-right: 0px;
+	border: 5px solid #CCC;
+	border-left: none;
+	   }
+	   
+	   textarea {
+	       width:90%;
+	       padding:5px;
+	   }
+	   
+       #response-message {
+           background: #ccc;
+           border: 1px solid #999;
+           padding:50px;
+	   }
+
+#bottombarbox
+{
+    clear: both;
+    color: #aaaaaa;
+    padding: 50px 0px;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 900px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -khtml-border-bottom-left-radius: 15px;
+    -khtml-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
+}
+
+.bottombar
+{
+    float: left;
+    width: 260px;
+    margin: 10px 20px;
+}
+
+.sbtitle
+{
+    cursor: pointer;
+    margin: 5px 0px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #444444;
+    font-size: 10pt;
+}
+
+.sbcontent
+{
+    display: none;
+    font-size: 9pt;
+}
+
+.sbcontent UL
+{
+    margin-top: 3px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.sbcontent LI
+{
+    margin-left: 15px;
+    padding: 3px 0px;
+    border-top: 1px solid #333333;
+}
+
+.sbcontent > UL > LI:first-child
+{
+    border-top: none;
+}
+
+#wp-calendar
+{
+    margin: 15px 5px;
+    border-style: solid none solid none;
+    border: 1px solid #666666;
+}
+
+#wp-calendar CAPTION
+{
+    margin-bottom: 5px;
+}
+
+#wp-calendar TH
+{
+    border-style: none none solid none;
+}
+
+#wp-calendar TD
+{
+    border-style: none;
+    text-align: right;
+}
+
+#searchform > LABEL
+{
+    display: none;
+}
+
+#single,
+#indexpage,
+#comments
+{
+    clear: both;
+    margin: 0 auto;
+    border-right: 3px solid #CCC;
+    border-bottom: 3px solid #CCC;
+    border-left: 3px solid;
+    background-color: #ffffff;
+    padding: 30px;
+    width: 937px;
+}
+
+#single,
+#indexpage
+{
+    border-color: #CCC;
+}
+
+.post
+{
+    padding: 0px 10px;
+    clear: both;
+}
+
+.dark .posttitlebar { background-color: #f2f2f2; }
+.dark .postselected .posttitlebar { background-color: #ffffff;  }
+
+.posttitlebar:hover {  background-color: #eff9fd;}
+
+#single .posttitlebar:hover {  background-color: #ffffff;}
+
+#indexpage .postselected
+{
+    margin: 20px -55px 20px -70px !important;
+    padding: 20px 30px;
+    border: 3px solid #bb2200;
+    background-color: #ffffff;
+}
+
+.posttitlebar
+{
+    padding: 25px 10px 40px 10px;
+    border-bottom: 1px solid #666666;
+}
+
+#single .posttitlebar { padding-left: 0px; }
+
+#single p {
+line-height: 36px;
+padding-right: 30px;
+}
+
+#indexpage .posttitlebar
+{
+}
+
+/*
+#single .posttitlebar
+{
+    margin: -35px -60px 10px -80px;
+    padding: 10px 20px;
+    border: 3px solid #bb2200;
+    background-color: #ffffff;
+}
+
+#single .posttitlebar .heading
+{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+*/
+
+#indexpage .posttitlebar .heading
+{
+}
+
+#indexpage .posttitlebar .heading a
+{
+    color: #555;
+}
+
+.dateauthor
+{
+    float: left;
+    text-align: left;
+    font-size: 9pt;
+    margin-top: 4px;
+    width: 100%;
+    font-family: arial;
+    text-transform: uppercase;
+}
+
+.review-count {
+	float: right;
+	text-align: right;
+}
+
+.post .avatar
+{
+    display: none;
+}
+
+#single .post .avatar
+{
+    display: block;
+    margin: 10px 20px 5px -90px;
+    background-color: #000000;
+    border: 2px solid #bb2200;
+    padding: 8px;
+    float: left;
+    /*
+    opacity: 0.8;
+    filter: alpha(opacity = 80);
+    */
+}
+
+.entry
+{
+    line-height: 180%;
+    font-size: 11pt;
+    padding: 5px 15px;
+    display: inline;
+}
+
+.entry,
+#comments
+{
+    color: #000000;
+}
+
+.nav-previous {float: left;}
+.nav-next {float: right;}
+
+
+/*
+ * TODO:
+ * could make this just '.entry' once we are certain we want the jQuery
+ * effect for #single .entry
+ */
+#indexpage .entry,
+#single .entry
+{
+}
+
+.entry .morelink
+{
+    display: none;
+}
+
+#indexpage .entry .morelink
+{
+    display: block;
+}
+
+.entry OL,
+.entry UL
+{
+    overflow: auto;
+    margin: 15px 35px 15px 15px;
+    padding: 0px 0px 0px 25px;
+}
+
+.entry UL
+{
+    list-style-type: square;
+}
+
+.entry UL LI,
+.entry OL LI
+{
+    margin: 0px;
+    padding: 5px 10px;
+/*    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444; */
+}
+
+.entry UL LI:last-child,
+.entry OL LI:last-child
+{
+    border-bottom: 0px none !important;
+}
+
+.postmetabox1
+{
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 9pt;
+}
+
+#indexpage .postmetabox1
+{
+    display: none;
+}
+
+.postmetabutton1
+{
+    float: right;
+    margin: 8px 0px; 
+    cursor: pointer;
+}
+
+#single .postmetabutton1
+{
+    display: none;
+}
+
+.postmetadata1
+{
+
+    padding: 7px 15px;
+   
+}
+
+#single .postmetadata1
+{
+    display: block;
+    margin-top: 30px;
+}
+
+.postmetadata a
+{
+    color: #dddddd;
+}
+
+.postmetadata1 DIV
+{
+    border-bottom: 1px solid #666666;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+}
+
+.postmetadata DIV:last-child
+{
+    border-bottom: none;
+}
+
+.postmetadata DIV UL
+{
+    margin: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.postmetadata DIV LI
+{
+    margin: 0px;
+    margin-left: 15px;
+    padding: 3px 0px;
+}
+
+.postcats,
+.posttags
+{
+    padding-top: 5px !important;
+    padding-bottom: 10px !important;
+    padding-right: 40px;
+    margin-top: 8px !important;
+}
+
+.postcats
+{
+    background: url(images/briefcase.png) no-repeat top right;
+}
+
+.posttags
+{
+    background: url(images/tag-orange.png) no-repeat top right;
+}
+
+#subpagelinks
+{
+    clear: both;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: solid 1px #666666;
+}
+
+#subpagelinks SPAN
+{
+    font-size: 11pt;
+    font-weight: normal;
+}
+
+#subpagelinks A
+{
+    padding: 1px 6px 3px 6px;
+    border: 1px solid #666666;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.navigation
+{
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    margin: 0px 10%;
+    margin-top: 00px;
+}
+
+.navigation SPAN
+{
+    padding: 5px 12px;
+    background-color: #111111;
+    opacity: 0.7;
+}
+
+#creditsbox
+{
+    position: relative;
+    display: block;
+    left: 0%;
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    background-color: #ffffff;
+  
+}
+
+#credits
+{
+    text-align: center;
+    margin: 0px;
+}
+
+#comments
+{
+    /*
+     * without the !important, which AFAIK is really not needed, IE does strange things
+     * for top margin (possibly because we set margins for #comments above as well.
+     */
+    padding: 20px 30px;
+border-color: #CCC;
+    border-top: 0px none;
+    /*
+    border: none;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    */
+}
+
+/*
+#commentsbotbar
+{
+    height: 25px;
+    margin: 0px -30px -20px -30px;
+    background-color: #bb2200;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+}
+*/
+
+.nocomments
+{
+    padding: 3px 8px;
+    background-color: #bb2200;
+    color: #ffffff;
+    font-size: 12pt;
+}
+
+.comment,
+.pingback,
+.trackback
+{
+    list-style-type: none;
+}
+
+.comment > DIV,
+.pingback > DIV,
+.trackback > DIV
+{
+    clear: both;
+    padding: 25px;
+    overflow: auto;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.bypostauthor > DIV
+{
+    background-color: #ffffff;
+}
+
+.comment-author
+{
+    float: left;
+    clear: left;
+    width: 80px;
+    min-height: 60px;
+    margin: 0px;
+    margin-right: 25px;
+    padding: 5px 10px 5px 0px;
+    border-right: 2px solid #bb2200;
+}
+
+.comment-author A,
+.comment-meta A
+{
+    color: #88ddff;
+}
+
+.comment-author IMG
+{
+    float: left;
+    clear: left;
+    margin-bottom: 6px;
+    border: 1px solid #666666;
+    padding: 4px;
+    opacity: 0.8;
+    filter: alpha(opacity = 80);
+}
+
+.comment-author CITE
+{
+    float: left;
+    clear: left;
+}
+
+.says
+{
+    display: none;
+}
+
+.comment P,
+.pingback P,
+.trackback P
+{
+    overflow: auto;
+    line-height: 140%;
+    /* TODO: check why we had the below in the first place! IE? Firefox? */
+    /* margin-left: 120px; */
+}
+
+/*
+ * don't let the above apply to reply boxes that have been dynanmically
+ * moved below the comment
+ */
+#respond P
+{
+    margin-left: 0px;
+}
+
+.comment .reply,
+.pingback .reply,
+.trackback .reply
+{
+    clear: both;
+    float: left;
+    margin-top: 10px;
+}
+
+.comment .reply
+{
+    padding: 4px 8px;
+    background-color: #bb2200;
+    font-size: 10pt;
+}
+
+.reply A
+{
+    color: #ffffff;
+}
+
+#respond
+{
+    margin-top: 20px;
+    padding: 30px 10px;
+    border-top: 2px solid #ccc;
+    /* add below, attributes to prevent .bypostauthor class from applying, if any */
+
+}
+
+#respond .heading
+{
+    margin-bottom: 10px;
+}
+
+.responduser
+{
+}
+
+.cancel-comment-reply
+{
+    font-family: "Lucida Grande", sans-serif;
+    margin-bottom: 4px;
+    margin-left: 10px;
+    font-size: 10pt;
+}
+
+.bottombar #s,
+.respondfield INPUT,
+#comment
+{
+    border: 1px solid #666666;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 10pt;
+}
+
+#comment
+{
+    width: 85%;
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+}
+
+#upgrademsie
+{
+    z-index: 5;
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    left: 30%;
+    width: 40%;
+    border-left: 15px solid #bb2200;
+    background-color: #ffffff;
+    margin: 0px;
+    padding: 10px;
+    color: #bb2200;
+    font-size: 14pt;
+}
+
+#upgrademsie IMG
+{
+    float: left;
+    margin-right: 10px;
+}
+
+/* required as per wordpress.org */
+
+.aligncenter, div.aligncenter
+{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.alignleft
+{
+   float: left;
+}
+
+.alignright
+{
+   float: right;
+}
+
+.wp-caption
+{
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   margin: 10px;
+   /* optional rounded corners for browsers that support it */
+   border-radius: 3px;
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+}
+
+.wp-caption img
+{
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+}
+
+.wp-caption p.wp-caption-text
+{
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 5px;
+   margin: 0;
+}
+
